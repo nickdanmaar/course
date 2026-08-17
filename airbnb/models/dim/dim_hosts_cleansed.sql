@@ -1,6 +1,6 @@
 {{
   config(
-    materialized = 'view'
+    materialized = 'table'
     )
 }}
 
@@ -16,6 +16,7 @@ SELECT
         host_name,
         'Anonymous'
     ) AS host_name,
+/*    IFF(is_superhost = 't', TRUE, FALSE) as is_superhost,*/
     is_superhost,
     created_at,
     updated_at
